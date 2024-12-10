@@ -98,18 +98,18 @@ function Login() {
     <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
       <h1>Login</h1>
       <Form onFinish={handleSubmit}>
-        <Form.Item
-          label="Username"
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
-          <Input
-            type="text"
-            value={formData.username}
-            onChange={handleInputChange}
-            placeholder="Username"
-          />
-        </Form.Item>
+        {/* <Form.Item 
+          // label="Username"
+          // name="username"
+          // rules={[{ required: true, message: "Please input your username!" }]}
+        // >
+           <Input 
+            // type="text"
+            // value={formData.username}
+            // onChange={handleInputChange}
+            // placeholder="Username"
+          // />
+         </Form.Item> */}
         <Form.Item
           label="Email"
           name="email"
@@ -177,22 +177,22 @@ function UserInfo() {
    
         <div>
           <p>
-            <strong>Username:</strong> {userInfo.username}
+            <strong>Username:</strong> {userInfo.user.username}
           </p>
           <p>
-            <strong>Email:</strong> {userInfo.email}
+            <strong>Email:</strong> {userInfo.user.email}
           </p>
           <p>
             <strong>Token:</strong> {userInfo.token}
           </p>
           <p>
-            <strong>Id User:</strong> {userInfo.id}
+            <strong>Id User:</strong> {userInfo.user.id}
           </p>
           <p>
-            <strong>CreatedAt:</strong> {userInfo.createdAt}
+            <strong>CreatedAt:</strong> {userInfo.user.createdAt}
           </p>
           <p>
-            <strong>UpdatedAt:</strong> {userInfo.updatedAt}
+            <strong>UpdatedAt:</strong> {userInfo.user.updatedAt}
           </p>
           <Button type="primary" danger onClick={handleLogout}>
             Logout
